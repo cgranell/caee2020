@@ -1,7 +1,10 @@
-library(likert)
-library(tidyverse)
 library(here)
+library(ggplot2)
+library(tidyr)
+library(dplyr)
+library(readr)
 library(readxl)
+library(likert)
 library(lubridate)
 library(scales)
 
@@ -68,9 +71,7 @@ intervention_session$asistencia <-
          level = unique(intervention_session$asistencia),
          labels = c("Lower average", "Upper average"))
 
-# cols_asistencia <- c("Upper average" = "#a6611a", "Lower average" = "#dfc27d")
 cols_asistencia <- c("Upper average" = "#7b3294", "Lower average" = "#008837")
-
 
 intervention_session$tipo_seccion <- 
   factor(intervention_session$tipo_seccion, 
