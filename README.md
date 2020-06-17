@@ -20,11 +20,7 @@ This repository is archived on Zenodo:
 
 Click the "Binder" button below to open the notebook on [binder.org](https://mybinder.org/).
 
-> BIDNER LINK TO BE INSERTED HERE
-
-<!--
-[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/cgranell/apps-mental-disorders-jmir/master?urlpath=rstudio)
--->
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/cgranell/caee2020/master?urlpath=rstudio)
 
 In the RStudio page, open the file `analysis.R`, the _main analysis file_. Then select "Knit > Knit to HTML" to render the document, which includes the complete analysis workflow, and display it in your browser. 
 

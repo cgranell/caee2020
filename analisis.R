@@ -20,7 +20,7 @@ folder_data <- "data"
 #Figure 4 Temporal distribution of A-C sections per session. Points represent number of participants per session. 
 
 
-file_name <- "datos-practica-uji.csv"
+file_name <- "datos-practica-UJI.csv"
 data_path <- here::here(folder_data, file_name)
 
 cols(

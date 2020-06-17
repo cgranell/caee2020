@@ -18,6 +18,9 @@ RUN chown -R ${NB_USER} ${HOME}
 ## Become normal user again
 USER ${NB_USER}
 
+## Run R script
+CMD ["Rscript", "analysis.R"]
+
 # --- Metadata ---
 LABEL maintainer="carlos.granell@uji.es" \
   Name="CAEE 2020 paper" \
