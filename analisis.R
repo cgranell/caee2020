@@ -95,7 +95,7 @@ barplot <-
         legend.title = element_blank()) +
   scale_y_continuous(labels = dollar_format(suffix = "%", prefix="")) +
   # geom_hline(yintercept=media_alumnos) +
-  labs(x = "Course sessions (year - identifier)", y="Percentatge (%)") +
+  labs(x = "Course sessions (year - identifier)", y="Section distribution (%)") +
   theme(axis.text.x = element_text(angle = 60, vjust = 0.5, hjust=0.5)) +
   labs(title = "Figure 4 Percentage distribution of A-B-C sections per session",
        subtitle= paste0("Points represent number of participants per session. Average participation per session was ", 
@@ -104,13 +104,13 @@ barplot <-
 
 file_name = "fig04.svg"
 data_path <- here::here(folder_figs, file_name) # local file
-svg(filename=data_path, width=13, height=6, pointsize=10)
+svg(filename=data_path, width=10, height=8, pointsize=10)
 barplot
 dev.off()
 
 file_name = "fig04.png"
 data_path <- here::here(folder_figs, file_name) # local file
-png(filename=data_path, width=850, height=480, units="px", pointsize=12)
+png(filename=data_path, width=10, height=8, units="in", res=300)
 barplot
 dev.off()
 
@@ -171,26 +171,28 @@ summary(likert_data_df)
        
 plot_title <- paste0("Figure 5 Results of the survey conducted in the 2019 edition of the 'Pràctica a l’UJI'. ", 
                   "(N=", num_respondents, ").")
-plot_subtitle <- paste0("Only high percentages (agree, totally agree) and neutral are shown. ", 
+plot_subtitle <- paste0("Only high percentages (agree, totally agree) and neutral are shown.\n", 
                      "All but one (2%) of the low percentages (strongly disagree, disagree) are zero.")
 plotlikert <- plot(likert_data_df, centered = FALSE, 
                    low.color = "goldenrod2", neutral.color = "grey90", high.color="indianred4",
                    plot.percent.low = FALSE, plot.percent.high = TRUE, plot.percent.neutral = TRUE,
                    wrap = 50, text.size = 4) + 
   labs(title = plot_title, 
-       subtitle = plot_subtitle) + 
+       subtitle = plot_subtitle,
+       x = "Questions",
+       y = "Responses percentage") + 
   theme(plot.title = element_text(hjust = 0.5)) + 
-  guides(fill=guide_legend(title=c("Responses"), nrow = 1))
+  guides(fill=guide_legend(title=c(""), nrow = 1))
 plotlikert
 
 file_name = "fig05.svg"
 data_path <- here::here(folder_figs, file_name) # local file
-svg(filename=data_path, width=13, height=6, pointsize=10)
+svg(filename=data_path, width=10, height=6, pointsize=10)
 plotlikert
 dev.off()
 
 file_name = "fig05.png"
 data_path <- here::here(folder_figs, file_name) # local file
-png(filename=data_path, width=850, height=480, units="px", pointsize=12)
+png(filename=data_path, width=10, height=6, units="in", res=300)
 plotlikert
 dev.off()
