@@ -16,9 +16,14 @@ folder_data <- "data"
 ############################################################################
 ############################################################################
 
+# Script to produce Figure 4
+# Caption: Percentage distribution of A-B-C sections per session. 
+# Subcaption: Points represent number of participants per session. Average participation per session was 17.
 
-#Figure 4 Temporal distribution of A-C sections per session. Points represent number of participants per session. 
-
+############################################################################
+############################################################################
+############################################################################
+############################################################################
 
 file_name <- "datos-practica-UJI.csv"
 data_path <- here::here(folder_data, file_name)
@@ -80,6 +85,10 @@ intervention_session$tipo_seccion <-
 
 
 # http://t-redactyl.io/blog/2016/01/creating-plots-in-r-using-ggplot2-part-4-stacked-bar-plots.html
+plot_title <- "Figure 4 Percentage distribution of A-B-C sections per session."
+plot_subtitle <- paste0("Points represent number of participants per session. Average participation per session was ", 
+                        media_alumnos, ".")
+  
 barplot <- 
   intervention_session %>%
   ggplot(aes(x=num_sesion, y=porcentaje)) + 
@@ -98,9 +107,8 @@ barplot <-
   # geom_hline(yintercept=media_alumnos) +
   labs(x = "Course sessions (year - identifier)", y="Section distribution (%)") +
   theme(axis.text.x = element_text(angle = 60, vjust = 0.5, hjust=0.5)) +
-  labs(title = "Figure 4 Percentage distribution of A-B-C sections per session",
-       subtitle= paste0("Points represent number of participants per session. Average participation per session was ", 
-                        media_alumnos, "."))
+  labs(title = plot_title,
+       subtitle= plot_subtitle)
 
 
 file_name = "fig04.svg"
@@ -120,10 +128,14 @@ dev.off()
 ############################################################################
 ############################################################################
 
+# Script to produce Figure 5
+# Caption: Results of the survey conducted in the 2019 edition of the 'Pràctica a l’UJI' (N=50). 
+# Subcaption: Only high percentages (agree, totally agree) and neutral are shown. All but one (2%) of the low percentages (strongly disagree, disagree) are zero.
 
-#Figure 5 Results of the survey conducted in the 2019 edition of the 'Pràctica a l’UJI'. 
-# Only high percentages (agree, totally agree) and neutral are shown. 
-# All but one (2%) of the low percentages (strongly disagree, disagree) are zero.
+############################################################################
+############################################################################
+############################################################################
+############################################################################
 
 
 file_name = "encuesta2019.xlsx"
@@ -170,7 +182,7 @@ likert_data_df <- likert(items=likert_data_raw_df[,c(3:7)])
 
 summary(likert_data_df)
        
-plot_title <- paste0("Figure 5 Results of the survey conducted in the 2019 edition of the 'Pràctica a l’UJI'. ", 
+plot_title <- paste0("Figure 5 Results of the survey conducted in the 2019 edition of the 'Pràctica a l’UJI' ", 
                   "(N=", num_respondents, ").")
 plot_subtitle <- paste0("Only high percentages (agree, totally agree) and neutral are shown.\n", 
                      "All but one (2%) of the low percentages (strongly disagree, disagree) are zero.")
