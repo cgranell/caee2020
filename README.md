@@ -51,3 +51,15 @@ The R Markdown document does not include code to install required packages. Run 
 
 `figs` folder:
  - output figures in [svg](https://en.wikipedia.org/wiki/Scalable_Vector_Graphics) and [png](https://en.wikipedia.org/wiki/Portable_Network_Graphics) format
+ 
+ `docs` folder:
+ - `encuesta2019.pdf`: questionnaire in [pdf](https://en.wikipedia.org/wiki/PDF) format
+ 
+ ## License
+
+The documents in this repository are licensed under a [Creative Commons Attribution 4.0 International License](https://creativecommons.org/licenses/by/4.0/).
+
+All contained code is licensed under the [Apache License 2.0](https://choosealicense.com/licenses/apache-2.0/).
+
+The data used is licensed under a [Open Data Commons Attribution License](https://opendatacommons.org/licenses/by/).
+ 
