@@ -26,7 +26,7 @@ Click the "Binder" button below to open the notebook on [binder.org](https://myb
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/cgranell/apps-mental-disorders-jmir/master?urlpath=rstudio)
 -->
 
-In the RStudio page, open the file `analysis.Rmd`, the _main analysis file_. Then select "Knit > Knit to HTML" to render the document, which includes the complete analysis workflow, and display it in your browser. 
+In the RStudio page, open the file `analysis.R`, the _main analysis file_. Then select "Knit > Knit to HTML" to render the document, which includes the complete analysis workflow, and display it in your browser. 
 
 Alternatively, click on the file  `analysis.html`, the results of the analysis, and select `View in Web Browser` to display it. 
 
