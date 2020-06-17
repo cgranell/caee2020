@@ -14,12 +14,30 @@ folder_data <- "data"
 ############################################################################
 
 
-#Figure 4 Temporal distribution of A-C sections per session. Points represent participants per session.
+#Figure 4 Temporal distribution of A-C sections per session. Points represent number of participants per session. 
+
 
 file_name <- "datos-practica-uji.csv"
 data_path <- here::here(folder_data, file_name)
 
-intervention <- read_csv(data_path) %>%
+cols(
+  id = col_character(),
+  fecha = col_character(),
+  duracion = col_double(),
+  duracion_1 = col_double(),
+  duracion_2 = col_double(),
+  duracion_3 = col_double(),
+  alumnos = col_double(),
+  chicos = col_double(),
+  chicas = col_double(),
+  cursos = col_character(),
+  conocimiento = col_character(),
+  lugar = col_character()
+) -> export_cols
+
+intervention <- 
+  read_csv(data_path,
+           col_types = export_cols) %>%
   mutate(fecha_final = lubridate::dmy(fecha), 
          anyo = year(fecha_final)) %>%
   select(-fecha) %>%
@@ -30,10 +48,7 @@ intervention <- read_csv(data_path) %>%
 intervention_session <- 
   intervention %>%
   select(-chicos, -chicas, -conocimiento, -cursos, -lugar) %>%
-  select(num_sesion, fecha_final, anyo, everything())
-
-intervention_session <- 
-  intervention_session %>%
+  select(num_sesion, fecha_final, anyo, everything()) %>%
   gather(dur1, dur2, dur3, key = "tipo_seccion", value = "dur_seccion")
 
 intervention_session <- 
@@ -45,14 +60,13 @@ media_alumnos <- mean(intervention_session$alumnos)
 intervention_session <- 
   intervention_session %>%
   group_by(num_sesion)  %>%
-  # mutate (pos = cumsum(porcentaje) - (0.5 * porcentaje)) %>%
   mutate (asistencia = ifelse(alumnos > media_alumnos, "mayor", "menor")) %>%
   arrange(desc(fecha_final), tipo_seccion)
 
 intervention_session$asistencia <- 
   factor(intervention_session$asistencia, 
          level = unique(intervention_session$asistencia),
-         labels = c("Upper average", "Lower average"))
+         labels = c("Lower average", "Upper average"))
 
 # cols_asistencia <- c("Upper average" = "#a6611a", "Lower average" = "#dfc27d")
 cols_asistencia <- c("Upper average" = "#7b3294", "Lower average" = "#008837")
@@ -82,8 +96,10 @@ barplot <-
   scale_y_continuous(labels = dollar_format(suffix = "%", prefix="")) +
   # geom_hline(yintercept=media_alumnos) +
   labs(x = "Course sessions (year - identifier)", y="Percentatge (%)") +
-  theme(axis.text.x = element_text(angle = 60, vjust = 0.5, hjust=0.5))
-# ggtitle("Ditribución temporal de secciones por sesión (%)")
+  theme(axis.text.x = element_text(angle = 60, vjust = 0.5, hjust=0.5)) +
+  labs(title = "Figure 4 Percentage distribution of A-B-C sections per session",
+       subtitle= paste0("Points represent number of participants per session. Average participation per session was ", 
+                        media_alumnos, "."))
 
 
 file_name = "fig04.svg"
@@ -153,12 +169,16 @@ likert_data_df <- likert(items=likert_data_raw_df[,c(3:7)])
 
 summary(likert_data_df)
        
-title <- paste0("Survey 'Practica la UJI' 2019", ", N=", num_respondents)
+plot_title <- paste0("Figure 5 Results of the survey conducted in the 2019 edition of the 'Pràctica a l’UJI'. ", 
+                  "(N=", num_respondents, ").")
+plot_subtitle <- paste0("Only high percentages (agree, totally agree) and neutral are shown. ", 
+                     "All but one (2%) of the low percentages (strongly disagree, disagree) are zero.")
 plotlikert <- plot(likert_data_df, centered = FALSE, 
                    low.color = "goldenrod2", neutral.color = "grey90", high.color="indianred4",
                    plot.percent.low = FALSE, plot.percent.high = TRUE, plot.percent.neutral = TRUE,
                    wrap = 50, text.size = 4) + 
-  ggtitle(title) + 
+  labs(title = plot_title, 
+       subtitle = plot_subtitle) + 
   theme(plot.title = element_text(hjust = 0.5)) + 
   guides(fill=guide_legend(title=c("Responses"), nrow = 1))
 plotlikert
