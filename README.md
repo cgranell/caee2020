@@ -22,34 +22,34 @@ Click the "Binder" button below to open the notebook on [binder.org](https://myb
 
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/cgranell/caee2020/master?urlpath=rstudio)
 
-In the RStudio page, open the file `analysis.R`, the _main analysis file_. Then select "Knit > Knit to HTML" to render the document, which includes the complete analysis workflow, and display it in your browser. 
-
-Alternatively, click on the file  `analysis.html`, the results of the analysis, and select `View in Web Browser` to display it. 
+In the RStudio page, open the file `analysis.R`, the _main analysis file_ that includes the complete analysis workflow. Then select "Source" or "Source > Source with Echo" to run the script. The two outputs figures will be plotting in the `Plots` pane, and stored in the folder `figs` as `fig04.png` and `fig05.png`
 
 ## Reproduce locally
 
-Open the main analysis file `analysis.Rmd` with RStudio. Then select "Knit > Knit to HTML" to render the document. If you have errors rendering it, try running each chunk to locate the problem.
+Open the main analysis file `analysis.R` with RStudio. Then select "Source" or "Source > Source with Echo" to run the script. If you have errors, try running block-by-block to locate the problem.
 
-The R Markdown document does not include code to install required packages. Run the code in the file `install.R` to install all dependencies.
-
+The R script does not include code to install the required packages. Run the code in the file `install.R` to install all dependencies in your local machine.
 
 
 ## Files in this repository
 
- - `analysis.Rmd`: R Markdown document with the code to conduct the analysis and create the two figures of the paper.
- - `analysis.html`: HTML rendering of the analysis document.
- - `Dockerfile`: A recipe for the computational environment using [Docker](https://en.wikipedia.org/wiki/Docker_(software)).
- - `install.R`: R script file executed during creation of the Docker image to install required dependencies.
+- `analysis.Rmd`: R script that analyses and creates the two figures of the paper.
+- `Dockerfile`: A recipe for the computational environment using [Docker](https://en.wikipedia.org/wiki/Docker_(software)).
+- `install.R`: R script file executed during creation of the Docker image to install required dependencies.
 
 `data` folder: 
- - `datos-practica-UJI.csv`: Data items extracted from each individual course session held from 2017 to 2019 ([csv](https://en.wikipedia.org/wiki/Comma-separated_values) format).
- - `encuesta2019.xlsx`: Survey responses for the 2019 course sessions ([xlsx](https://en.wikipedia.org/wiki/Microsoft_Office_XML_formats) format).
 
-`figs` folder:
- - output figures in [svg](https://en.wikipedia.org/wiki/Scalable_Vector_Graphics) and [png](https://en.wikipedia.org/wiki/Portable_Network_Graphics) format
- 
+- `datos-practica-UJI.csv`: Data items extracted from each individual course session held from 2017 to 2019 ([csv](https://en.wikipedia.org/wiki/Comma-separated_values) format).
+- `encuesta2019.xlsx`: Survey responses for the 2019 course sessions ([xlsx](https://en.wikipedia.org/wiki/Microsoft_Office_XML_formats) format).
+
+`figs` folder: output figures in [svg](https://en.wikipedia.org/wiki/Scalable_Vector_Graphics) and [png](https://en.wikipedia.org/wiki/Portable_Network_Graphics) format.
+
+- `fig04.png`, `fig04.svg`: Percentage distribution of A-B-C sections per session. 
+- `fig05.png`, `fig05.svg`: Results of the survey conducted in the 2019 edition of the 'Pràctica a l’UJI' (N=50).
+
  `docs` folder:
- - `encuesta2019.pdf`: questionnaire in [pdf](https://en.wikipedia.org/wiki/PDF) format
+
+- `encuesta2019.pdf`: questionnaire in [pdf](https://en.wikipedia.org/wiki/PDF) format
  
  ## License
 
