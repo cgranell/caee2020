@@ -1,6 +1,6 @@
 # Advancing pre-university students' computational thinking skills through an educational project based on tangible elements and virtual block-based programming
 
-R Markdown notebook for the paper ["Advancing pre-university students' computational thinking skills through an educational project based on tangible elements and virtual block-based programming"](https://onlinelibrary.wiley.com/journal/10990542)
+R script file for the paper ["Advancing pre-university students' computational thinking skills through an educational project based on tangible elements and virtual block-based programming"](https://onlinelibrary.wiley.com/journal/10990542)
 
 > Trilles S, Granell C. 
 > Advancing pre-university students' computational thinking skills through an educational project based on tangible elements and virtual block-based programming. 
@@ -18,22 +18,22 @@ This repository is archived on Zenodo:
 
 ## Reproduce Online
 
-Click the "Binder" button below to open the notebook on [binder.org](https://mybinder.org/).
+Click the "Binder" button below to open the R script file on [binder.org](https://mybinder.org/).
 
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/cgranell/caee2020/master?urlpath=rstudio)
 
-In the RStudio page, open the file `analysis.R`, the _main analysis file_ that includes the complete analysis workflow. Then select "Source" or "Source > Source with Echo" to run the script. The two outputs figures will be accessible in the `Plots` pane, and stored in the folder `figs` as `fig04.png` and `fig05.png`
+In the RStudio page, open the file `analysis.R`, the _main analysis file_ that includes the complete analysis workflow. Then select "Source" or "Source > Source with Echo" to run the script. The two output figures will be accessible in the `Plots` pane, and stored in the folder `figs` as `fig04.png` and `fig05.png`
 
 ## Reproduce locally
 
 Open the main analysis file `analysis.R` with RStudio. Then select "Source" or "Source > Source with Echo" to run the script. If you have errors, try running block-by-block to locate the problem.
 
-The R script does not include code to install the required packages. Run the code in the file `install.R` to install all dependencies in your local machine.
+The R script does not include code to install the required packages. Run `install.R` before `analysis.R` to install all dependencies in your local machine.
 
 
 ## Files in this repository
 
-- `analysis.Rmd`: R script file that analyses and creates the two figures of the paper.
+- `analysis.R`: R script file that generates the two main figures of the paper.
 - `Dockerfile`: A recipe for the computational environment using [Docker](https://en.wikipedia.org/wiki/Docker_(software)).
 - `install.R`: R script file executed during creation of the Docker image to install required dependencies.
 
