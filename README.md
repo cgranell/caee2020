@@ -22,7 +22,7 @@ Click the "Binder" button below to open the notebook on [binder.org](https://myb
 
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/cgranell/caee2020/master?urlpath=rstudio)
 
-In the RStudio page, open the file `analysis.R`, the _main analysis file_ that includes the complete analysis workflow. Then select "Source" or "Source > Source with Echo" to run the script. The two outputs figures will be plotting in the `Plots` pane, and stored in the folder `figs` as `fig04.png` and `fig05.png`
+In the RStudio page, open the file `analysis.R`, the _main analysis file_ that includes the complete analysis workflow. Then select "Source" or "Source > Source with Echo" to run the script. The two outputs figures will be accessible in the `Plots` pane, and stored in the folder `figs` as `fig04.png` and `fig05.png`
 
 ## Reproduce locally
 
@@ -33,7 +33,7 @@ The R script does not include code to install the required packages. Run the cod
 
 ## Files in this repository
 
-- `analysis.Rmd`: R script that analyses and creates the two figures of the paper.
+- `analysis.Rmd`: R script file that analyses and creates the two figures of the paper.
 - `Dockerfile`: A recipe for the computational environment using [Docker](https://en.wikipedia.org/wiki/Docker_(software)).
 - `install.R`: R script file executed during creation of the Docker image to install required dependencies.
 
