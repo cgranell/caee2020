@@ -106,7 +106,7 @@ barplot <-
   scale_y_continuous(labels = dollar_format(suffix = "%", prefix="")) +
   # geom_hline(yintercept=media_alumnos) +
   labs(x = "Course sessions (year - identifier)", y="Section distribution (%)") +
-  theme(axis.text.x = element_text(angle = 60, vjust = 0.5, hjust=0.5)) +
+  theme(axis.text.x = element_text(angle = 60, vjust = 0.5, hjust=0.5)) + 
   labs(title = plot_title,
        subtitle= plot_subtitle)
 
