@@ -10,11 +10,7 @@ R script file for the paper ["Advancing pre-university students' computational t
 
 This repository is archived on Zenodo:
 
-> ZENODO DOI TO BE INSERTED HERE
-
-<!--
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.3609267.svg)](https://doi.org/10.5281/zenodo.3609267)
--->
+[![DOI](https://www.zenodo.org/badge/DOI/10.5281/zenodo.3901461.svg)](https://doi.org/10.5281/zenodo.3901461)
 
 ## Reproduce Online
 
