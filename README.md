@@ -7,9 +7,7 @@ R script file for the paper ["Advancing pre-university students' computational t
 > Computer Applications in Engineering Education
 > DOI: 10.1002/cae.22319
 
-https://img.shields.io/badge/2020-10.1002/cae.22319-brightgreen.svg
-
-[![](https://img.shields.io/badge/CAEE-https://doi.org/10.1002/cae.22319-yellow.svg)](https://doi.org/10.1002/cae.22319)
+[![](https://img.shields.io/badge/CAEE-10.1002/cae.22319-yellow.svg)](https://doi.org/10.1002/cae.22319)
 
 This repository is archived on Zenodo:
 
