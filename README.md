@@ -4,7 +4,7 @@ R script file for the paper ["Advancing pre-university students' computational t
 
 > Trilles S, Granell C. 
 > Advancing pre-university students' computational thinking skills through an educational project based on tangible elements and virtual block-based programming. 
-> Computer Applications in Engineering Education
+> Computer Applications in Engineering Education, 28(6), 1490-1502, 2020
 > DOI: 10.1002/cae.22319
 
 [![](https://img.shields.io/badge/CAEE-10.1002/cae.22319-yellow.svg)](https://doi.org/10.1002/cae.22319)
